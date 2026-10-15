@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meeti Doshi</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef1fb;--ink:#1c2658;--card:#ffffff;--pink:#ff5c8a;--mint:#bdefd8;--muted:#5b638f}
+@media (prefers-color-scheme:dark){:root{--bg:#161b3a;--ink:#e9ecff;--card:#222a5c;--muted:#a7aeda}}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:grid;place-items:center;padding:32px 20px;background:var(--bg);color:var(--ink);font-family:"Bricolage Grotesque",system-ui,sans-serif;
+background-image:linear-gradient(var(--muted) 1px,transparent 1px),linear-gradient(90deg,var(--muted) 1px,transparent 1px);background-size:32px 32px;background-blend-mode:soft-light}
+main{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;max-width:920px;width:100%}
+h1{font-size:clamp(3rem,9vw,6.2rem);line-height:.92;margin:0 0 20px;font-weight:800;letter-spacing:-.03em}
+.lead{font-size:1.15rem;line-height:1.5;max-width:30ch;color:var(--muted);margin:0}
+.id{background:var(--card);border:2px solid var(--ink);border-radius:20px;padding:0;overflow:hidden;box-shadow:10px 10px 0 var(--pink);transform:rotate(1.5deg)}
+.top{background:var(--mint);color:#1c2658;padding:16px 22px;font-weight:700;border-bottom:2px solid var(--ink)}
+.top small{display:block;font-weight:400;opacity:.8}
+dl{margin:0;padding:8px 22px 18px}
+.row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px dashed var(--muted)}
+.row:last-child{border:0}
+dt{color:var(--muted)}
+dd{margin:0;font-weight:700;text-align:right}
+@media (max-width:720px){main{grid-template-columns:1fr}.id{transform:none}}
+</style>
+</head>
+<body>
+<main>
+  <section>
+    <h1>Meeti Doshi</h1>
+    <p class="lead">Computer Engineering student at APSIT, currently in Semester V and deep in the Software Engineering lab.</p>
+  </section>
+  <section class="id" aria-label="Student details">
+    <div class="top">A. P. Shah Institute of Technology<small>Student details</small></div>
+    <dl>
+      <div class="row"><dt>Name</dt><dd>Meeti Doshi</dd></div>
+      <div class="row"><dt>Branch</dt><dd>Computer Engineering</dd></div>
+      <div class="row"><dt>Semester</dt><dd>V</dd></div>
+      <div class="row"><dt>Division</dt><dd>C</dd></div>
+      <div class="row"><dt>Roll no</dt><dd>90</dd></div>
+      <div class="row"><dt>Moodle ID</dt><dd>24102064</dd></div>
+      <div class="row"><dt>Lab</dt><dd>Software Engineering</dd></div>
+    </dl>
+  </section>
+</main>
+</body>
+</html>

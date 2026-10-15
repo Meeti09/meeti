@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Viva Oracle</title>
+<style>
+:root{--bg:#fff4d6;--ink:#2a1a4a;--accent:#7c3aed;--hot:#ff7a3d}
+@media (prefers-color-scheme:dark){:root{--bg:#24163f;--ink:#fff1d0;--accent:#b794ff;--hot:#ff9a66}}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;background:var(--bg);color:var(--ink);font-family:"Trebuchet MS",system-ui,sans-serif;text-align:center}
+.ball{width:min(78vw,340px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 32% 28%,#6b4bb8,#2a1a4a 60%,#120a26);display:grid;place-items:center;margin:0 auto 28px;box-shadow:0 14px 0 var(--accent);padding:12%}
+.ball p{margin:0;color:#fff;font-size:clamp(1rem,3.6vw,1.25rem);line-height:1.35;transition:opacity .25s}
+.ball p.swap{opacity:0}
+h1{font-size:clamp(1.8rem,6vw,2.8rem);margin:0 0 8px}
+.sub{margin:0 0 28px;opacity:.8}
+button{font:inherit;font-weight:700;background:var(--hot);color:#2a1a4a;border:2px solid var(--ink);border-radius:999px;padding:14px 30px;cursor:pointer}
+button:hover{filter:brightness(1.08)}
+button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.ball p{transition:none}}
+</style>
+</head>
+<body>
+<main>
+  <h1>The Viva Oracle</h1>
+  <p class="sub">Ask a question in your head, then shake.</p>
+  <div class="ball" role="status" aria-live="polite"><p id="out">Shake to reveal your fate.</p></div>
+  <button id="go" type="button">Shake the ball</button>
+</main>
+<script>
+const answers=[
+"Yes. Your code compiles on the first try.",
+"Ask the examiner about UML. They will love it.",
+"Not today. The server is down at submission time.",
+"It works on your laptop, which is what matters.",
+"Signs point to a surprise question on use cases.",
+"Save your file. Save it again.",
+"Outlook good: the lab ends early.",
+"Reply hazy. Try a different Git branch.",
+"Definitely. Blame the Wi-Fi anyway.",
+"Don't count on it. Count on coffee.",
+"Your diagram is correct. Trust the arrows.",
+"Without a doubt, someone has the same bug."
+];
+const out=document.getElementById("out");
+let last=-1;
+document.getElementById("go").addEventListener("click",()=>{
+  let i;do{i=Math.floor(Math.random()*answers.length)}while(i===last);
+  last=i;out.classList.add("swap");
+  setTimeout(()=>{out.textContent=answers[i];out.classList.remove("swap")},250);
+});
+</script>
+</body>
+</html>
